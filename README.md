@@ -6,7 +6,7 @@ Upstream: https://github.com/ChromeDevTools/chrome-devtools-mcp
 
 ## 上游是什么、它缺什么
 
-`chrome-devtools-mcp` (GitHub Trending 2026-11-16, 717 stars in the period) gives coding agents 20+ browser tools with **flat, un-namespaced names** (`click`, `fill`, `take_snapshot`, ...). That is fine alone; it breaks when a client mounts it next to another MCP server. Nothing in the server, and nothing in the MCP spec, tells the client how to disambiguate two servers exposing the same name.
+`chrome-devtools-mcp` (GitHub Trending 2026-11-16, 717 stars in the period) gives coding agents a large set of browser tools with **flat, un-namespaced names** (`click`, `fill`, `take_snapshot`, ...). That is fine alone; it breaks when a client mounts it next to another MCP server. Nothing in the server, and nothing in the MCP spec, tells the client how to disambiguate two servers exposing the same name.
 
 This is not hypothetical. Real, currently open reports:
 

@@ -1,0 +1,440 @@
+{
+  "tool": "mcp-route-collision",
+  "version": "1.0.0",
+  "mode": "scan",
+  "servers": [
+    "fs",
+    "text",
+    "git"
+  ],
+  "tools_per_server": {
+    "fs": 9,
+    "text": 10,
+    "git": 8
+  },
+  "total_tools": 27,
+  "collisions": [
+    {
+      "kind": "exact",
+      "key": "readfile",
+      "name": "read_file",
+      "members": [
+        {
+          "server": "fs",
+          "tool": "read_file",
+          "required": [
+            "path"
+          ],
+          "properties": [
+            "path"
+          ],
+          "types": {
+            "path": "string"
+          }
+        },
+        {
+          "server": "git",
+          "tool": "read_file",
+          "required": [
+            "path",
+            "rev"
+          ],
+          "properties": [
+            "path",
+            "rev"
+          ],
+          "types": {
+            "path": "string",
+            "rev": "string"
+          }
+        }
+      ],
+      "schema_incompatible": true,
+      "witness": {
+        "pair": [
+          "fs::read_file",
+          "git::read_file"
+        ],
+        "required_a": [
+          "path"
+        ],
+        "required_b": [
+          "path",
+          "rev"
+        ],
+        "props_a": [
+          "path"
+        ],
+        "props_b": [
+          "path",
+          "rev"
+        ],
+        "differs_in_required": true,
+        "differs_in_properties": true,
+        "differs_in_types": true
+      }
+    },
+    {
+      "kind": "exact",
+      "key": "listdir",
+      "name": "list_dir",
+      "members": [
+        {
+          "server": "fs",
+          "tool": "list_dir",
+          "required": [
+            "path"
+          ],
+          "properties": [
+            "path"
+          ],
+          "types": {
+            "path": "string"
+          }
+        },
+        {
+          "server": "git",
+          "tool": "list_dir",
+          "required": [
+            "path",
+            "rev"
+          ],
+          "properties": [
+            "path",
+            "rev"
+          ],
+          "types": {
+            "path": "string",
+            "rev": "string"
+          }
+        }
+      ],
+      "schema_incompatible": true,
+      "witness": {
+        "pair": [
+          "fs::list_dir",
+          "git::list_dir"
+        ],
+        "required_a": [
+          "path"
+        ],
+        "required_b": [
+          "path",
+          "rev"
+        ],
+        "props_a": [
+          "path"
+        ],
+        "props_b": [
+          "path",
+          "rev"
+        ],
+        "differs_in_required": true,
+        "differs_in_properties": true,
+        "differs_in_types": true
+      }
+    },
+    {
+      "kind": "exact",
+      "key": "search",
+      "name": "search",
+      "members": [
+        {
+          "server": "fs",
+          "tool": "search",
+          "required": [
+            "pattern"
+          ],
+          "properties": [
+            "pattern"
+          ],
+          "types": {
+            "pattern": "string"
+          }
+        },
+        {
+          "server": "text",
+          "tool": "search",
+          "required": [
+            "path",
+            "pattern"
+          ],
+          "properties": [
+            "path",
+            "pattern"
+          ],
+          "types": {
+            "pattern": "string",
+            "path": "string"
+          }
+        },
+        {
+          "server": "git",
+          "tool": "search",
+          "required": [
+            "pattern"
+          ],
+          "properties": [
+            "pattern"
+          ],
+          "types": {
+            "pattern": "string"
+          }
+        }
+      ],
+      "schema_incompatible": true,
+      "witness": {
+        "pair": [
+          "fs::search",
+          "text::search"
+        ],
+        "required_a": [
+          "pattern"
+        ],
+        "required_b": [
+          "path",
+          "pattern"
+        ],
+        "props_a": [
+          "pattern"
+        ],
+        "props_b": [
+          "path",
+          "pattern"
+        ],
+        "differs_in_required": true,
+        "differs_in_properties": true,
+        "differs_in_types": true
+      }
+    },
+    {
+      "kind": "exact",
+      "key": "diff",
+      "name": "diff",
+      "members": [
+        {
+          "server": "text",
+          "tool": "diff",
+          "required": [
+            "a",
+            "b"
+          ],
+          "properties": [
+            "a",
+            "b"
+          ],
+          "types": {
+            "a": "string",
+            "b": "string"
+          }
+        },
+        {
+          "server": "git",
+          "tool": "diff",
+          "required": [],
+          "properties": [
+            "path"
+          ],
+          "types": {
+            "path": "string"
+          }
+        }
+      ],
+      "schema_incompatible": true,
+      "witness": {
+        "pair": [
+          "text::diff",
+          "git::diff"
+        ],
+        "required_a": [
+          "a",
+          "b"
+        ],
+        "required_b": [],
+        "props_a": [
+          "a",
+          "b"
+        ],
+        "props_b": [
+          "path"
+        ],
+        "differs_in_required": true,
+        "differs_in_properties": true,
+        "differs_in_types": true
+      }
+    }
+  ],
+  "near_misses": [
+    {
+      "kind": "near",
+      "distance": 2,
+      "members": [
+        {
+          "server": "fs",
+          "tool": "stat",
+          "required": [
+            "path"
+          ],
+          "properties": [
+            "path"
+          ],
+          "types": {
+            "path": "string"
+          }
+        },
+        {
+          "server": "git",
+          "tool": "status",
+          "required": [],
+          "properties": [],
+          "types": {}
+        }
+      ],
+      "schema_incompatible": true
+    }
+  ],
+  "summary": {
+    "groups": 4,
+    "exact_groups": 4,
+    "normalized_groups": 0,
+    "schema_incompatible_groups": 4,
+    "near_misses": 1,
+    "naive_last_wins_shadowed": 5
+  },
+  "policy": {
+    "version": 1,
+    "generated_by": "mcp-route-collision",
+    "tools": {
+      "fs::read_file": {
+        "server": "fs",
+        "tool": "read_file"
+      },
+      "fs::write_file": {
+        "server": "fs",
+        "tool": "write_file"
+      },
+      "fs::list_dir": {
+        "server": "fs",
+        "tool": "list_dir"
+      },
+      "fs::stat": {
+        "server": "fs",
+        "tool": "stat"
+      },
+      "fs::delete": {
+        "server": "fs",
+        "tool": "delete"
+      },
+      "fs::copy": {
+        "server": "fs",
+        "tool": "copy"
+      },
+      "fs::move": {
+        "server": "fs",
+        "tool": "move"
+      },
+      "fs::mkdir": {
+        "server": "fs",
+        "tool": "mkdir"
+      },
+      "fs::search": {
+        "server": "fs",
+        "tool": "search"
+      },
+      "text::read_lines": {
+        "server": "text",
+        "tool": "read_lines"
+      },
+      "text::search": {
+        "server": "text",
+        "tool": "search"
+      },
+      "text::wordcount": {
+        "server": "text",
+        "tool": "wordcount"
+      },
+      "text::replace": {
+        "server": "text",
+        "tool": "replace"
+      },
+      "text::sort_lines": {
+        "server": "text",
+        "tool": "sort_lines"
+      },
+      "text::uniq": {
+        "server": "text",
+        "tool": "uniq"
+      },
+      "text::hash": {
+        "server": "text",
+        "tool": "hash"
+      },
+      "text::encode": {
+        "server": "text",
+        "tool": "encode"
+      },
+      "text::diff": {
+        "server": "text",
+        "tool": "diff"
+      },
+      "text::json_query": {
+        "server": "text",
+        "tool": "json_query"
+      },
+      "git::status": {
+        "server": "git",
+        "tool": "status"
+      },
+      "git::log": {
+        "server": "git",
+        "tool": "log"
+      },
+      "git::diff": {
+        "server": "git",
+        "tool": "diff"
+      },
+      "git::show": {
+        "server": "git",
+        "tool": "show"
+      },
+      "git::branch_list": {
+        "server": "git",
+        "tool": "branch_list"
+      },
+      "git::search": {
+        "server": "git",
+        "tool": "search"
+      },
+      "git::read_file": {
+        "server": "git",
+        "tool": "read_file"
+      },
+      "git::list_dir": {
+        "server": "git",
+        "tool": "list_dir"
+      }
+    },
+    "ambiguous": {
+      "read_file": [
+        "fs",
+        "git"
+      ],
+      "list_dir": [
+        "fs",
+        "git"
+      ],
+      "search": [
+        "fs",
+        "text",
+        "git"
+      ],
+      "diff": [
+        "text",
+        "git"
+      ]
+    }
+  },
+  "determinism": {
+    "sha256": "59b9c87d48543258fa5b7c574fa9196a88d8c2b8852beb4927f488cc35907fca"
+  }
+}

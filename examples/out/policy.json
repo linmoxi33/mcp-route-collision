@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "generated_by": "mcp-route-collision",
+  "tools": {
+    "fs::read_file": {
+      "server": "fs",
+      "tool": "read_file"
+    },
+    "fs::write_file": {
+      "server": "fs",
+      "tool": "write_file"
+    },
+    "fs::list_dir": {
+      "server": "fs",
+      "tool": "list_dir"
+    },
+    "fs::stat": {
+      "server": "fs",
+      "tool": "stat"
+    },
+    "fs::delete": {
+      "server": "fs",
+      "tool": "delete"
+    },
+    "fs::copy": {
+      "server": "fs",
+      "tool": "copy"
+    },
+    "fs::move": {
+      "server": "fs",
+      "tool": "move"
+    },
+    "fs::mkdir": {
+      "server": "fs",
+      "tool": "mkdir"
+    },
+    "fs::search": {
+      "server": "fs",
+      "tool": "search"
+    },
+    "text::read_lines": {
+      "server": "text",
+      "tool": "read_lines"
+    },
+    "text::search": {
+      "server": "text",
+      "tool": "search"
+    },
+    "text::wordcount": {
+      "server": "text",
+      "tool": "wordcount"
+    },
+    "text::replace": {
+      "server": "text",
+      "tool": "replace"
+    },
+    "text::sort_lines": {
+      "server": "text",
+      "tool": "sort_lines"
+    },
+    "text::uniq": {
+      "server": "text",
+      "tool": "uniq"
+    },
+    "text::hash": {
+      "server": "text",
+      "tool": "hash"
+    },
+    "text::encode": {
+      "server": "text",
+      "tool": "encode"
+    },
+    "text::diff": {
+      "server": "text",
+      "tool": "diff"
+    },
+    "text::json_query": {
+      "server": "text",
+      "tool": "json_query"
+    },
+    "git::status": {
+      "server": "git",
+      "tool": "status"
+    },
+    "git::log": {
+      "server": "git",
+      "tool": "log"
+    },
+    "git::diff": {
+      "server": "git",
+      "tool": "diff"
+    },
+    "git::show": {
+      "server": "git",
+      "tool": "show"
+    },
+    "git::branch_list": {
+      "server": "git",
+      "tool": "branch_list"
+    },
+    "git::search": {
+      "server": "git",
+      "tool": "search"
+    },
+    "git::read_file": {
+      "server": "git",
+      "tool": "read_file"
+    },
+    "git::list_dir": {
+      "server": "git",
+      "tool": "list_dir"
+    }
+  },
+  "ambiguous": {
+    "read_file": [
+      "fs",
+      "git"
+    ],
+    "list_dir": [
+      "fs",
+      "git"
+    ],
+    "search": [
+      "fs",
+      "text",
+      "git"
+    ],
+    "diff": [
+      "text",
+      "git"
+    ]
+  }
+}

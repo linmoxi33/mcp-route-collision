@@ -1,0 +1,2518 @@
+{
+  "tool": "mcp-route-collision",
+  "version": "1.0.0",
+  "mode": "route",
+  "total": 200,
+  "routed": 200,
+  "rejected": 0,
+  "errors": 0,
+  "misroutes": 0,
+  "rejections": [],
+  "error_details": [],
+  "results": [
+    {
+      "index": 0,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 1,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 2,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 3,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 4,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 5,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 6,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 7,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 8,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 9,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 10,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 11,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 12,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 13,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 14,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 15,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 16,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 17,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 18,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 19,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 20,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 21,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 22,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 23,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 24,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 25,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 26,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 27,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 28,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 29,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 30,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 31,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 32,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 33,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 34,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 35,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 36,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 37,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 38,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 39,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 40,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 41,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 42,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 43,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 44,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 45,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 46,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 47,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 48,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 49,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 50,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 51,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 52,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 53,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 54,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 55,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 56,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 57,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 58,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 59,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 60,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 61,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 62,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 63,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 64,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 65,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 66,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 67,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 68,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 69,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 70,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 71,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 72,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 73,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 74,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 75,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 76,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 77,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 78,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 79,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 80,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 81,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 82,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 83,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 84,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 85,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 86,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 87,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 88,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 89,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 90,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 91,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 92,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 93,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 94,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 95,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 96,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 97,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 98,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 99,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 100,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 101,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 102,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 103,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 104,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 105,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 106,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 107,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 108,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 109,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 110,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 111,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 112,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 113,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 114,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 115,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 116,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 117,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 118,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 119,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 120,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 121,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 122,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 123,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 124,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 125,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 126,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 127,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 128,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 129,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 130,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 131,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 132,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 133,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 134,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 135,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 136,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 137,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 138,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 139,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 140,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 141,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 142,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 143,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 144,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 145,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 146,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 147,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 148,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 149,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 150,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 151,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 152,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 153,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 154,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 155,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 156,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 157,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 158,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 159,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 160,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 161,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 162,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 163,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 164,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 165,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 166,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 167,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 168,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 169,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 170,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 171,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 172,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 173,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 174,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 175,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 176,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 177,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 178,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 179,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 180,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 181,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 182,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 183,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 184,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 185,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 186,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 187,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 188,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 189,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 190,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 191,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    },
+    {
+      "index": 192,
+      "tool": "fs::read_file",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "read_file",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"content\":\"alpha\\nbeta\\ngamma\\n\"}"
+    },
+    {
+      "index": 193,
+      "tool": "fs::stat",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "stat",
+      "ok": true,
+      "sample": "{\"path\":\"a.txt\",\"size\":17,\"mtimeMs\":1794825788465}"
+    },
+    {
+      "index": 194,
+      "tool": "fs::list_dir",
+      "args": {
+        "path": "."
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "list_dir",
+      "ok": true,
+      "sample": "{\"path\":\".\",\"entries\":[\"README.md\",\"a.txt\",\"b.txt\",\"data.json\"]}"
+    },
+    {
+      "index": 195,
+      "tool": "fs::search",
+      "args": {
+        "pattern": "*.txt"
+      },
+      "expect": "fs",
+      "routed_server": "fs",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"pattern\":\"*.txt\",\"matches\":[\"a.txt\",\"b.txt\"]}"
+    },
+    {
+      "index": 196,
+      "tool": "text::wordcount",
+      "args": {
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "wordcount",
+      "ok": true,
+      "sample": "{\"words\":3,\"lines\":4,\"bytes\":17}"
+    },
+    {
+      "index": 197,
+      "tool": "text::search",
+      "args": {
+        "pattern": "alpha",
+        "path": "a.txt"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "search",
+      "ok": true,
+      "sample": "{\"matches\":[{\"line\":1,\"text\":\"alpha\"}]}"
+    },
+    {
+      "index": 198,
+      "tool": "text::read_lines",
+      "args": {
+        "path": "b.txt",
+        "start": 0,
+        "end": 2
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "read_lines",
+      "ok": true,
+      "sample": "{\"lines\":[\"alpha\",\"delta\"]}"
+    },
+    {
+      "index": 199,
+      "tool": "text::json_query",
+      "args": {
+        "path": "data.json",
+        "query": "nested.value"
+      },
+      "expect": "text",
+      "routed_server": "text",
+      "routed_tool": "json_query",
+      "ok": true,
+      "sample": "{\"value\":42}"
+    }
+  ],
+  "collision_summary": {
+    "groups": 4,
+    "near_misses": 1
+  }
+}

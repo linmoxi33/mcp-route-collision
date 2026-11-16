@@ -1,0 +1,7 @@
+{
+  "servers": [
+    { "name": "fs", "command": ["node", "servers/fs-server.mjs"], "cwd": "../..", "env": { "MCP_FS_ROOT": "examples/in/workspace" } },
+    { "name": "text", "command": ["node", "servers/text-server.mjs"], "cwd": "../..", "env": { "MCP_FS_ROOT": "examples/in/workspace" } },
+    { "name": "git", "command": ["node", "servers/git-server.mjs"], "cwd": "../.." }
+  ]
+}
